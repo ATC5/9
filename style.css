@@ -1,4 +1,5 @@
 /* styles.css */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -258,4 +259,152 @@ header {
   body {
     font-family: 'Tajawal', sans-serif;
   }
+  .hero-section {
+    padding: 60px 20px;
+    background-color: #f5f7fa;
+    text-align: center;
+  }
+  
+  .hero-section .highlight {
+    color: #25d366;
+  }
+  
+  .hero-section .intro-text {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #333;
+  }
+  
+  .courses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .course-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .course-item:hover {
+    transform: translateY(-8px);
+  }
+  
+  .course-item i {
+    font-size: 40px;
+    color: #25d366;
+    margin-bottom: 15px;
+  }
+  
+  .course-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .course-item p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .footer-text {
+    margin-top: 40px;
+    font-size: 18px;
+    color: #444;
+  }
+  
+  .btn-main {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 28px;
+    background-color: #25d366;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-main:hover {
+    background-color: #1db954;
+    transform: scale(1.05);
+  }
+  .courses-section {
+    padding: 60px 20px;
+    background-color: #f9fafb;
+    text-align: center;
+  }
+  
+  .courses-section .highlight {
+    color: #25d366;
+  }
+  
+  .courses-section .intro-text {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #444;
+  }
+  
+  .course-details {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    text-align: left;
+  }
+  
+  .course-point {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .course-point:hover {
+    transform: translateY(-8px);
+  }
+  
+  .course-point i {
+    font-size: 32px;
+    color: #25d366;
+  }
+  
+  .course-point p {
+    font-size: 17px;
+    color: #333;
+  }
+  
+  .footer-text {
+    margin-top: 40px;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .btn-main {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 28px;
+    background-color: #25d366;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-main:hover {
+    background-color: #1db954;
+    transform: scale(1.05);
+  }
+  
   
