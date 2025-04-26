@@ -1,0 +1,254 @@
+/* styles.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fdfdfd;
+  color: #3a5965;
+}
+
+header {
+  background: #222831;
+  color: #4f5a75cf;
+  padding: 1rem;
+  text-align: center;
+}
+
+header img {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+nav {
+  background: #baafaf;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+nav a {
+  color: #eeeeee;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00adb5;
+}
+
+.hero {
+  background-color: #38585a;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.content {
+  padding: 2rem 3rem;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  color: #222831;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+footer {
+  background: #222831;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.75rem;
+  background-color: #393e46;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1e4a4d;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+}
+/* تنسيق الهيدر */
+header {
+    background-color: #baafaf; /* اللون الرمادي الداكن */
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .logo img {
+    max-width: 150px; /* حجم الشعار */
+    height: auto;
+  }
+  
+  .nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-bar ul li {
+    display: inline;
+  }
+  
+  .nav-bar ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-bar ul li a:hover {
+    color: #25d366; /* تغير اللون عند التمرير */
+  }
+  
+  .contact-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-info a {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-info a:hover {
+    color: #25d366;
+  }
+  
+  .contact-info .contact-icon {
+    margin-left: 20px;
+  }
+  
+  .fas {
+    margin-right: 5px;
+  }
+  
+  /* لضمان التوافق مع الشاشات الصغيرة (الهواتف) */
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav-bar ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .contact-info {
+      margin-top: 10px;
+    }
+  }
+  .btn {
+    background-color: #25d366;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #1db954;
+  }
+  .certificates-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .certificates-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #1f1f1f;
+  }
+  
+  .certificates-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .btn-cert {
+    background-color: #25d366;
+    color: white;
+    padding: 14px 28px;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+  
+  .btn-cert:hover {
+    background-color: #1db954;
+    transform: scale(1.05);
+  }
+  
