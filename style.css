@@ -9,6 +9,10 @@
 body {
   background-color: #fdfdfd;
   color: #3a5965;
+  body {
+    font-family: 'Tajawal', sans-serif;
+  }
+  
 }
 
 header {
@@ -250,5 +254,8 @@ header {
   .btn-cert:hover {
     background-color: #1db954;
     transform: scale(1.05);
+  }
+  body {
+    font-family: 'Tajawal', sans-serif;
   }
   
