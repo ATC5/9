@@ -29,7 +29,7 @@ header img {
 }
 
 nav {
-  background: #baafaf;
+  background: #457d4c;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -125,7 +125,7 @@ button:hover {
 }
 /* تنسيق الهيدر */
 header {
-    background-color: #baafaf; /* اللون الرمادي الداكن */
+    background-color: #457d4c; /* اللون الرمادي الداكن */
     padding: 20px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
@@ -165,7 +165,7 @@ header {
   }
   
   .nav-bar ul li a:hover {
-    color: #25d366; /* تغير اللون عند التمرير */
+    color: #df981d; /* تغير اللون عند التمرير */
   }
   
   .contact-info {
@@ -183,7 +183,7 @@ header {
   }
   
   .contact-info a:hover {
-    color: #25d366;
+    color: #457d4c;
   }
   
   .contact-info .contact-icon {
