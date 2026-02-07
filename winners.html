@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الشرف | الفائزون</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/Screenshot_2025-04-26_005150-removebg-preview.png" alt="شعار المنصة" class="logo-img">
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="winners.html" class="active">لوحة الشرف</a></li>
+                    <li><a href="cert.html" class="btn-verify-nav">التحقق من الشهادات</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>لوحة الشرف والتميز</h1>
+        <p>قائمة بالمتميزين والفائزين في اختبارات الدورة</p>
+    </section>
+
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <input type="text" id="searchBox" placeholder="ابحث عن اسم الفائز..." onkeyup="searchCertificate()" 
+                   style="padding: 15px; width: 100%; max-width: 500px; border-radius: 30px; border: 1px solid #ccc; text-align: center;">
+        </div>
+
+        <div id="certificatesList" class="grid-container"></div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2025</p>
+    </footer>
+
+    <script src="2.js"></script>
+    
+    <script>
+        // دالة العرض المحدثة لتناسب التصميم الجديد
+        function displayCertificates(list) {
+            var certificatesDiv = document.getElementById("certificatesList");
+            certificatesDiv.innerHTML = "";
+
+            list.forEach(cert => {
+                var card = document.createElement("div");
+                card.className = "card"; // نستخدم نفس كلاس البطاقة من الستايل الجديد
+                card.style.borderTop = "5px solid gold"; // تمييز الفائزين باللون الذهبي
+                
+                card.innerHTML = `
+                    <i class="fas fa-medal" style="color: gold; font-size: 30px;"></i>
+                    <h3 style="margin: 10px 0;">${cert.name}</h3>
+                    <a href="${cert.pdf}" target="_blank" style="color: var(--primary-color); font-weight: bold;">
+                        <i class="fas fa-eye"></i> عرض الشهادة
+                    </a>
+                `;
+                certificatesDiv.appendChild(card);
+            });
+        }
+
+        // تشغيل العرض عند التحميل
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof certificates !== 'undefined') {
+                displayCertificates(certificates);
+            }
+        });
+
+        // دالة البحث
+        function searchCertificate() {
+            var searchInput = document.getElementById("searchBox").value.toLowerCase();
+            var filtered = certificates.filter(cert => cert.name.toLowerCase().includes(searchInput));
+            displayCertificates(filtered);
+        }
+    </script>
+</body>
+</html>

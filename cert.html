@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحقق من الشهادة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/1.jpg">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/Screenshot_2025-04-26_005150-removebg-preview.png" alt="شعار المنصة" class="logo-img">
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="cert.html" class="active">التحقق من الشهادة</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="padding-bottom: 80px;">
+        <h1>نظام التحقق الإلكتروني</h1>
+        <p>أدخل رقم الشهادة للتأكد من صحتها وتحميل النسخة الأصلية</p>
+    </section>
+
+    <div class="container">
+        <div class="verify-box">
+            <h2 style="color: var(--primary-color); margin-bottom: 10px;">بحث عن شهادة</h2>
+            <p style="font-size: 14px; color: #666; margin-bottom: 20px;">مثال: ATC-25-001</p>
+            
+            <div class="input-group">
+                <input type="text" id="certIdInput" placeholder="اكتب رقم الشهادة هنا...">
+            </div>
+            
+            <button onclick="verifyCertificate()" class="btn-main">
+                <i class="fas fa-search"></i> تحقق الآن
+            </button>
+
+            <div id="loadingMessage" class="loading">
+                <i class="fas fa-spinner fa-spin"></i> جاري البحث في السجلات...
+            </div>
+            
+            <div id="resultArea"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2025 المنصة العراقية للطيران</p>
+    </footer>
+
+    <script>
+        // رابط السكربت الخاص بك
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw_XwHq45hyyOwT0KTKVe5Oi7P-LckolfGtXtTy4iq2KbW0IjlA-pt8F0sfoYt9Xu8S/exec"; 
+
+        function verifyCertificate() {
+            var certId = document.getElementById("certIdInput").value.trim();
+            var resultDiv = document.getElementById("resultArea");
+            var loadingDiv = document.getElementById("loadingMessage");
+
+            resultDiv.innerHTML = "";
+            
+            if (certId === "") {
+                resultDiv.innerHTML = "<p class='result-error'>يرجى كتابة رقم الشهادة أولاً.</p>";
+                return;
+            }
+
+            loadingDiv.style.display = "block";
+
+            fetch(GOOGLE_SCRIPT_URL + "?id=" + certId)
+            .then(response => response.json())
+            .then(data => {
+                loadingDiv.style.display = "none";
+
+                if (data.found) {
+                    resultDiv.innerHTML = `
+                        <div class="result-success">
+                            <i class="fas fa-check-circle" style="font-size: 40px; color: var(--secondary-color);"></i>
+                            <h3 style="margin: 10px 0;">شهادة معتمدة ورسمية</h3>
+                            <p><strong>الطالب:</strong> ${data.name}</p>
+                            <p><strong>الرقم:</strong> ${certId}</p>
+                            <a href="${data.pdfPath}" target="_blank" class="btn-main" style="display:inline-block; margin-top:15px; background-color:var(--secondary-color);">
+                                <i class="fas fa-file-pdf"></i> عرض الشهادة
+                            </a>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="result-error">
+                            <i class="fas fa-times-circle" style="font-size: 40px;"></i>
+                            <h3>عذراً، الشهادة غير موجودة</h3>
+                            <p>يرجى التأكد من كتابة الرقم بشكل صحيح (مثال: ATC-25-001)</p>
+                        </div>
+                    `;
+                }
+            })
+            .catch(error => {
+                loadingDiv.style.display = "none";
+                resultDiv.innerHTML = "<p class='result-error'>حدث خطأ في الاتصال بالسيرفر.</p>";
+            });
+        }
+    </script>
+</body>
+</html>
