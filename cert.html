@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>التحقق من الشهادة</title>
+    <title>التحقق من الشهادة | المنصة العراقية للطيران</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="img/1.jpg">
+    <link rel="icon" href="img/logo.png">
 </head>
 <body>
 
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="img/Screenshot_2025-04-26_005150-removebg-preview.png" alt="شعار المنصة" class="logo-img">
+                <a href="index.html">
+                    <img src="img/1.PNG" alt="شعار المنصة العراقية للطيران" class="logo-img">
+                </a>
             </div>
             <nav class="nav-bar">
                 <ul>
                     <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="cert.html" class="active">التحقق من الشهادة</a></li>
+                    <li><a href="training.html">الدورات</a></li>
+                    <li><a href="winners.html">لوحة الشرف</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="cert.html" class="active btn-verify-nav"><i class="fas fa-certificate"></i> التحقق من الشهادات</a></li>
                 </ul>
             </nav>
         </div>
@@ -26,17 +32,18 @@
 
     <section class="hero" style="padding-bottom: 80px;">
         <h1>نظام التحقق الإلكتروني</h1>
-        <p>أدخل رقم الشهادة للتأكد من صحتها وتحميل النسخة الأصلية</p>
-           <p style="font-size: 14px; color: #666; margin-bottom: 20px;">هذه الشهادة خاصة لمن اكمل الدورة كاملة بعد اجتياز الامتحان النهائي, ويوجد رمز سري لكل شهادة</p>
+         <h1>Iraqi Flight Platform</h1>
+        <p>أدخل الرمز السري للشهادة للتأكد من صحتها واستعراض النسخة المعتمدة</p>
     </section>
 
     <div class="container">
         <div class="verify-box">
-            <h2 style="color: var(--primary-color); margin-bottom: 10px;">بحث عن شهادة</h2>
-            <p style="font-size: 14px; color: #666; margin-bottom: 20px;">مثال: ATC-25-001</p>
-             <p style="font-size: 14px; color: #bd0d0d; margin-bottom: 20px;">للتنويه يمكنك بحث عن الشهاة فقط عن طريق الرمز السري</p>
+            <h2 style="color: var(--primary-color); margin-bottom: 5px;">بحث عن شهادة</h2>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 5px;">مثال: ATC-25-001</p>
+            <p style="font-size: 0.85rem; color: #dc2626; font-weight: bold; margin-bottom: 20px;">* تنبيه: البحث يتم فقط عن طريق رمز الشهادة السري</p>
+            
             <div class="input-group">
-                <input type="text" id="certIdInput" placeholder="اكتب رقم الشهادة هنا...">
+                <input type="text" id="certIdInput" placeholder="اكتب رمز الشهادة هنا...">
             </div>
             
             <button onclick="verifyCertificate()" class="btn-main">
@@ -52,11 +59,10 @@
     </div>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 المنصة العراقية للطيران</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 <strong>المنصة العراقية للطيران</strong></p>
     </footer>
 
     <script>
-        // رابط السكربت الخاص بك
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcQas4Sb1iXFCurR1XNhcLC2izqGCAC7uwmcBN73mV3_QubPLiKdr-mTR2zPmm-0fh/exec"; 
 
         function verifyCertificate() {
@@ -95,7 +101,7 @@
                         <div class="result-error">
                             <i class="fas fa-times-circle" style="font-size: 40px;"></i>
                             <h3>عذراً، الشهادة غير موجودة</h3>
-                            <p>يرجى التأكد من كتابة الرقم بشكل صحيح (مثال: ATC-25-001)</p>
+                            <p>يرجى التأكد من كتابة الرقم بشكل صحيح</p>
                         </div>
                     `;
                 }
@@ -108,7 +114,3 @@
     </script>
 </body>
 </html>
-
-
-
-
